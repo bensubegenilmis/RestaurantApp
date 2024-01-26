@@ -8,7 +8,10 @@ export default function SearchBar() {
             <AntDesign style = {styles.iconStyle}
             name="search1" size={30} color="black" />
             <TextInput style = {styles.inputStyle}
-            placeholder='Ara' />
+            placeholder='Ara'
+            autoCorrect={false}  //önerilen yazıyı kaldırır,
+            autoCapitalize='none' // büyük harfle başlamayı  kapatır  
+            />
         </View>
     );
 };
