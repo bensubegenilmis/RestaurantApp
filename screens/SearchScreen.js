@@ -5,14 +5,14 @@ import useResults from '../hooks/useResults';
 import ResultList from '../components/ResultList';
 
 export default function SearchScreen() {
-  const [searchApi,results] = useResults();
+  const [searchApi,results, errorMessage] = useResults();
   //console.log(results);
   const [term, setTerm] = useState('');
 
   
   const filterResultsByPrice = (price) => {
     return results.filter((results) =>{
-      return results.price === price
+      return results.price === price;
     });
   };
 
@@ -23,7 +23,7 @@ export default function SearchScreen() {
        onTermChange={setTerm}
        OnTermSubmit={() => searchApi (term)}
        />
-      
+      {errorMessage ? <Text>{errorMessage}</Text> : null }
       <ResultList title = 'Ucuz Restaurantlar'
       results={filterResultsByPrice('₺')} />
       <ResultList title = 'Uygun Restaurantlar'
