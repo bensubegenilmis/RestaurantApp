@@ -18,7 +18,7 @@ export default () => {
         };
 
     useEffect(() => {
-        searchApi('Tost');
+        searchApi('Hamburger');
 
     }, []);
 
